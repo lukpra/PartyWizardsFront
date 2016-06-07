@@ -60,3 +60,12 @@ target/
 
 #Ipython Notebook
 .ipynb_checkpoints
+
+# IDEA PyCharm edditor
+.idea/
+
+# Local DB
+db.sqlite3
+
+# django virtual env 
+django
