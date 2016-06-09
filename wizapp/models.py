@@ -21,13 +21,13 @@ class Decoration(models.Model):
 
 class Barcode(models.Model):
     ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
-    barcode = models.IntegerField(max_length=20)
+    barcode = models.IntegerField()
 
 class ListIngredients(models.Model):
     drink = models.ForeignKey(Drink, on_delete=models.CASCADE)
     ingredient = models.ForeignKey(Ingredient, on_delete=models.CASCADE)
-    quantity = models.FloatField(max_length=5)
-    kindMeasure = models.CharField(20)
+    quantity = models.FloatField()
+    kindMeasure = models.CharField(max_length=20)
 
 class ListTools(models.Model):
     drink = models.ForeignKey(Drink, on_delete=models.CASCADE)
@@ -40,17 +40,17 @@ class ListDecoration(models.Model):
 class Rating(models.Model):
     drink = models.ForeignKey(Drink, on_delete=models.CASCADE)
     user = models.ForeignKey(User)
-    rating = models.IntegerField(max_length=2);
-
-class Answer(models.Model):
-    comment = models.CharField(max_length=1000)
-    date = models.DateField()
-    delete = models.BooleanField()
+    rating = models.IntegerField();
 
 class Comment(models.Model):
     drink = models.ForeignKey(Drink, on_delete=models.CASCADE)
     user = models.ForeignKey(User)
-    answer = models.ForeignKey(Answer)
+    comment = models.CharField(max_length=1000)
+    date = models.DateField()
+    delete = models.BooleanField()
+
+class Answer(models.Model):
+    answer_comment = models.ForeignKey(Comment)
     comment = models.CharField(max_length=1000)
     date = models.DateField()
     delete = models.BooleanField()
