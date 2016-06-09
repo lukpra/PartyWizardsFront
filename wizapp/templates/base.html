@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} Wizard of Party{% endblock %} </title>
+    {% load staticfiles %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Satisfy">
+    <link rel="stylesheet" type="text/css" href="{% static 'wizapp/style.css' %}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div flass="container-fluid">
+
+        <!-- Header -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="% url 'wizapp:index' %">Driny</a>
+        </div>
+
+        <!--Items-->
+        <div class="collapse navbar-collapse" id="topNavBar">
+            <ul class="nav navbar-nav">
+                <li class="">
+                    <a href="% url 'wizapp:index' %">
+                        <span class="glyphicon glyphicon-cd" aria-hidden="true"></span>&nbsp; Driny
+                    </a>
+                </li>
+                <li class="">
+                    <a href="% url 'wizapp:alcohol-add' %">
+                        <span class="glyphicon glyphicon-glass" aria-hidden="true"></span>&nbsp; Dodaj alko
+                    </a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="">
+                    <a href="% url 'wizapp:index' %">
+                        <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp; Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+
+</nav>
+{% block body %}
+{% endblock %}
+
+
+</body>
+</html>
