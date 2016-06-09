@@ -46,24 +46,24 @@ class Comment(models.Model):
     drink = models.ForeignKey(Drink, on_delete=models.CASCADE)
     user = models.ForeignKey(User)
     comment = models.CharField(max_length=1000)
-    date = models.DateField()
-    delete = models.BooleanField()
+    date = models.DateField(auto_now_add=True)
+    delete = models.BooleanField(default=False)
 
 class Answer(models.Model):
     answer_comment = models.ForeignKey(Comment)
     comment = models.CharField(max_length=1000)
-    date = models.DateField()
-    delete = models.BooleanField()
+    date = models.DateField(auto_now_add=True)
+    delete = models.BooleanField(default=False)
 
 class Ban(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     start_date = models.DateField()
     end_date = models.DateField()
-    perm = models.BooleanField()
+    perm = models.BooleanField(default=False)
 
 class myUser(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    is_moderator = models.BooleanField()
+    is_moderator = models.BooleanField(default=False)
     date_of_birthday = models.DateField()
     sex = models.CharField(max_length=10)
     age = models.IntegerField()
