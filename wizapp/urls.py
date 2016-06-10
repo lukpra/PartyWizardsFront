@@ -21,5 +21,5 @@ urlpatterns = [
     url(r'^barcode/$', views.BarcodeView.as_view(),name="barcodes"),
 
     # /barcode/add/
-    url(r'^barcode/$', views.BarcodeView.as_view(),name="barcodes")
+    url(r'^barcode/add/$', views.BarcodeAdd.as_view(),name="barcode-add")
 ]
