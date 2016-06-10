@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.urlresolvers import reverse
 
 class Drink(models.Model):
     name =  models.CharField(max_length=250, blank=False)
@@ -8,6 +9,9 @@ class Drink(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('wizapp:drinks', kwargs ={'pk':self})
 
 class Ingredient(models.Model):
     name =  models.CharField(max_length=250, blank=False)
