@@ -1,7 +1,23 @@
 {% extends 'base.html' %}
 
-{% block title %} Wizards of Party Home {% endblock %}
+{% block title %} Drink {% endblock %}
 
 {% block body %}
-Driny will coming!
+
+<div class="container-fluid">
+    <div class="row">
+            <div class="col-sm-12 col-md-7">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        {% for drink in all_drinks %}
+                            <li>
+                                <span>Bar: {{ drink.name }} przypis: {{ drink.recipe }}</span>
+                            </li>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
 {% endblock %}

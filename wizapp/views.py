@@ -21,23 +21,11 @@ class AddDrinkView(CreateView):
     model = Drink
     fields = ['name', 'recipe', 'picture']
 
-class DrinksView(generic.ListView):
-   template_name = 'wizapp/drinks.html'
-   context_object_name = 'all_drinks'
 
-   def get_queryset(self):
-       return Drink.objects.all()
-    fields = ['name', 'type', 'is_tasty']
-class AddDrinkView(CreateView):
+class DrinksView(generic.ListView):
     model = Drink
-    fields = ['name', 'recipe', 'picture']
-
-class DrinksView(generic.ListView):
-   template_name = 'wizapp/drinks.html'
-   context_object_name = 'all_drinks'
-
-   def get_queryset(self):
-       return Drink.objects.all()
+    context_object_name = 'all_drinks'
+    template_name = 'wizapp/drinks.html'
 '''
 
 def index(request):
