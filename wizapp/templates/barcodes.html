@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %} Barcodes {% endblock %}
+
+{% block body %}
+
+    {% for barcode in barcodes_all %}
+
+        <li>
+            <span>Bar: {{ barcode.barcode }} jest przypisany do: {{ barcode.ingredient.name }} o typie: {{ barcode.ingredient.kind }}</span>
+        </li>
+
+    {% endfor %}
+
+{% endblock %}
