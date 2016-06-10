@@ -1,10 +1,14 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.urlresolvers import reverse
 
 class Drink(models.Model):
     name =  models.CharField(max_length=250)
     recipe = models.CharField(max_length=1000)
     picture = models.FileField()
+
+    def get_absolute_url(self):
+        return reverse('wizapp:drinks', kwargs ={'pk':self})
 
 class Ingredient(models.Model):
     name =  models.CharField(max_length=250)
