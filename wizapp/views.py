@@ -6,7 +6,7 @@ from .models import Drink
 class IndexView(generic.TemplateView):
     template_name = 'index.html'
 
-class AddDrinkView(generic.CreateView):
+class AddDrinkView(CreateView):
     model = Drink
     fields = ['name', 'recipe', 'picture']
 
