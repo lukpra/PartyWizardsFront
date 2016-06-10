@@ -27,6 +27,17 @@ class DrinksView(generic.ListView):
 
    def get_queryset(self):
        return Drink.objects.all()
+    fields = ['name', 'type', 'is_tasty']
+class AddDrinkView(CreateView):
+    model = Drink
+    fields = ['name', 'recipe', 'picture']
+
+class DrinksView(generic.ListView):
+   template_name = 'wizapp/drinks.html'
+   context_object_name = 'all_drinks'
+
+   def get_queryset(self):
+       return Drink.objects.all()
 '''
 
 def index(request):
