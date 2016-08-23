@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %} Drinks {% endblock %}
+
+{% block body %}
+
+{% if all_drinks %}
+{% for drink in all_drinks %}
+                <div class="col-sm-4 col-lg-2">
+                    <div class="thumbnail">
+                        <a href="{% url 'wizapp:detail' drink.id %}">
+                            <img src="{{ drink.picture.url }}" class="img-responsive">
+                        </a>
+                        <div class="caption">
+                            <h2>{{ drink.name }}</h2>
+
+                        </div>
+                    </div>
+                </div>
+                {% cycle '' '' '' '' '' '<div class="clearfix visible-lg"></div>' %}
+            {% endfor %}
+{% endif %}
+{% endblock %}
