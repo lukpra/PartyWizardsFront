@@ -11,8 +11,7 @@ class Drink(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('wizapp:drinks', kwargs={'pk': self})
-
+        return reverse('wizapp:detail', kwargs={'pk': self.pk})
     def __str__(self):
         return self.name
 

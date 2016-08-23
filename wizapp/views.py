@@ -17,7 +17,7 @@ class BarcodeAdd(CreateView):
     fields = ['barcode', 'ingredient']
     success_url = reverse_lazy('wizapp:barcodes')
 
-class DrinksView(generic.ListView):
+class DrinkIndexView(generic.ListView):
     model = Drink
     context_object_name = 'all_drinks'
     template_name = 'drinks.html'
@@ -28,6 +28,10 @@ class DrinksView(generic.ListView):
 class AddDrinkView(CreateView):
     model = Drink
     fields = ['name', 'recipe', 'picture' ]
+
+class DrinkDetailView(generic.DetailView):
+    model = Drink
+    template_name = 'detail.html'
 
 '''
 
