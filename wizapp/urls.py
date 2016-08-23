@@ -8,7 +8,8 @@ app_name = 'wizapp'
 
 urlpatterns = [
 
-    url(r'^$', views.IndexView.as_view(template_name="index.html"), name="index"),
+    #/partywizards/contact/
+    url('^add_drink/$', views.AddDrinkView.as_view(), name='add_drink'),
 
     url(r'^drinks/$', views.DrinkIndexView.as_view(), name="drinks"),
 
