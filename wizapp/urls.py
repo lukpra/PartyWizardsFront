@@ -1,5 +1,4 @@
 from django.conf.urls import url
-from . import views
 from django.views.generic import TemplateView
 from . import views
 
@@ -11,9 +10,9 @@ urlpatterns = [
     # / - index
     url(r'^$', views.IndexView.as_view(template_name="index.html"), name='index'),
 
-    # add_drink/
-    url('^add_drink/$', views.AddDrinkView.as_view(), name='add_drink'),
+    url(r'^drinks/$', views.DrinksView.as_view(), name="drinks"),
 
+    url(r'^drinks/add/$', views.AddDrinkView.as_view(), name="drink-add")
     # /drinks/
     url('^drinks/$', views.DrinksView.as_view(), name='drinks'),
 
