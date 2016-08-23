@@ -6,16 +6,18 @@ from .models import Drink
 class IndexView(generic.TemplateView):
     template_name = 'index.html'
 
+class DrinksView(generic.ListView):
+    model = Drink
+    context_object_name = 'all_drinks'
+    template_name = 'drinks.html'
+
+    def get_queryset(self):
+        return Drink.objects.all()
+
 class AddDrinkView(CreateView):
     model = Drink
-    fields = ['name', 'recipe', 'picture']
+    fields = ['name', 'recipe', 'picture' ]
 
-class DrinksView(generic.ListView):
-   template_name = 'wizapp/drinks.html'
-   context_object_name = 'all_drinks'
-
-   def get_queryset(self):
-       return Drink.objects.all()
 '''
 
 def index(request):

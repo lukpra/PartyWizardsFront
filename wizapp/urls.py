@@ -7,12 +7,10 @@ from . import views
 app_name = 'wizapp'
 
 urlpatterns = [
-    # / - index
-    url(r'^$', views.IndexView.as_view(template_name="index.html"), name='index'),
 
-    #/partywizards/contact/
-    url('^add_drink/$', views.AddDrinkView.as_view(), name='add_drink'),
+    url(r'^$', views.IndexView.as_view(template_name="index.html"), name="index"),
 
-    #/partywizards/about/
-    url('^drinks/$', views.DrinksView.as_view(), name='drinks'),
+    url(r'^drinks/$', views.DrinksView.as_view(), name="drinks"),
+
+    url(r'^drinks/add/$', views.AddDrinkView.as_view(), name="drink-add")
 ]
