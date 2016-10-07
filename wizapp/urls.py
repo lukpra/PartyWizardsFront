@@ -9,7 +9,6 @@ app_name = 'wizapp'
 urlpatterns = [
 
     #/partywizards/contact/
-    url('^add_drink/$', views.AddDrinkView.as_view(), name='add_drink'),
 
     url(r'^drinks/$', views.DrinkIndexView.as_view(), name="drinks"),
 
