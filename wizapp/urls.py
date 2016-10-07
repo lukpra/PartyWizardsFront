@@ -7,6 +7,8 @@ from . import views
 app_name = 'wizapp'
 
 urlpatterns = [
+    # / - index
+    url(r'^$', views.IndexView.as_view(template_name="index.html"), name='index'),
 
     #/partywizards/contact/
 
