@@ -14,7 +14,7 @@ urlpatterns = [
 
     url(r'^(?P<pk>[0-9]+)/$', views.DrinkDetailView.as_view(), name='detail'),
 
-    url(r'^drinks/add/$', views.AddDrinkView.as_view(), name="drink-add")
+    url(r'^drinks/add/$', views.AddDrinkView.as_view(), name="drink-add"),
 
     # /barcode
     url(r'^barcode/$', views.BarcodeView.as_view(),name="barcodes"),
